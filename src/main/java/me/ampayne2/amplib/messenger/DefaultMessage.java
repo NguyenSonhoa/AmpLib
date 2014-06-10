@@ -17,6 +17,7 @@ public enum DefaultMessage implements Message {
     private final String defaultMessage;
 
     private DefaultMessage(String path, String defaultMessage) {
+        this.message = defaultMessage;
         this.path = path;
         this.defaultMessage = defaultMessage;
     }

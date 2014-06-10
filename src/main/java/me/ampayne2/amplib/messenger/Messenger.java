@@ -47,7 +47,7 @@ public class Messenger {
     public Messenger registerMessages(EnumSet<? extends Message> messageEnum) {
         FileConfiguration messageConfig = plugin.getConfigManager().getConfig(DefaultConfigType.MESSAGE);
         for (Message message : messageEnum) {
-            messageConfig.addDefault(message.getPath(), message.getDefault());
+            messageConfig.addDefault(message.getPath(), message.getMessage());
         }
         messageConfig.options().copyDefaults(true);
         plugin.getConfigManager().getConfigAccessor(DefaultConfigType.MESSAGE).saveConfig();
