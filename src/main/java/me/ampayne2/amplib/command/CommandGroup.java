@@ -59,10 +59,8 @@ public class CommandGroup {
      */
     public void setPermission(Permission permission) {
         this.permission = permission;
-        try {
+        if (plugin.getServer().getPluginManager().getPermission(permission.getName()) == null) {
             plugin.getServer().getPluginManager().addPermission(permission);
-        } catch (IllegalArgumentException e) {
-            plugin.getMessenger().debug(e);
         }
     }
 
