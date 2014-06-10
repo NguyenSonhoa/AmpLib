@@ -141,7 +141,9 @@ public class CommandGroup {
      */
     public CommandGroup addChildCommand(CommandGroup command) {
         children.put(command.getName().toLowerCase(), command);
-        command.getPermission().addParent(permission, true);
+        if (permission != null && command.getPermission() != null) {
+            command.getPermission().addParent(permission, true);
+        }
         return this;
     }
 
@@ -189,7 +191,7 @@ public class CommandGroup {
         CommandGroup entry = children.get(command.toLowerCase());
         if (entry instanceof Command) {
             if ((entry.getMinArgsLength() <= args.length || entry.getMinArgsLength() == -1) && (entry.getMaxArgsLength() >= args.length || entry.getMaxArgsLength() == -1)) {
-                if (sender.hasPermission(entry.getPermission())) {
+                if (entry.getPermission() == null || sender.hasPermission(entry.getPermission())) {
                     if (sender instanceof Player || !entry.isPlayerOnly()) {
                         entry.execute(command, sender, args);
                     } else {
