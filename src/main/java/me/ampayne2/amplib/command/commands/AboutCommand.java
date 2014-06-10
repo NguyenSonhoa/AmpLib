@@ -1,0 +1,36 @@
+package me.ampayne2.amplib.command.commands;
+
+import me.ampayne2.amplib.AmpJavaPlugin;
+import me.ampayne2.amplib.command.Command;
+import me.ampayne2.amplib.messenger.Messenger;
+import org.apache.commons.lang.StringUtils;
+import org.bukkit.command.CommandSender;
+import org.bukkit.permissions.Permission;
+import org.bukkit.permissions.PermissionDefault;
+
+/**
+ * A command that lists some information about the plugin.
+ */
+public class AboutCommand extends Command {
+    private final String header;
+    private final String author;
+    private final String version;
+
+    public AboutCommand(AmpJavaPlugin plugin) {
+        super(plugin, "");
+        String pluginName = plugin.getName().toLowerCase();
+        setDescription("Lists some information about " + pluginName);
+        setPermission(new Permission(pluginName + ".about", PermissionDefault.TRUE));
+        setPlayerOnly(false);
+        header = Messenger.HIGHLIGHT_COLOR + "<-------<| " + Messenger.PRIMARY_COLOR + "About " + pluginName + " " + Messenger.HIGHLIGHT_COLOR + "|>------->";
+        author = Messenger.SECONDARY_COLOR + "Author: " + StringUtils.join(plugin.getDescription().getAuthors(), ", ");
+        version = Messenger.SECONDARY_COLOR + "Version: " + plugin.getDescription().getVersion();
+    }
+
+    @Override
+    public void execute(String command, CommandSender sender, String[] args) {
+        sender.sendMessage(header);
+        sender.sendMessage(author);
+        sender.sendMessage(version);
+    }
+}
