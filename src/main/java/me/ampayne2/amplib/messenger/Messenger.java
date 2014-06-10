@@ -20,9 +20,9 @@ public class Messenger {
     private Logger log;
     private Map<Class<?>, RecipientHandler> recipientHandlers = new HashMap<>();
 
-    public static ChatColor PRIMARY_COLOR;
-    public static ChatColor SECONDARY_COLOR;
-    public static ChatColor HIGHLIGHT_COLOR;
+    public static ChatColor PRIMARY_COLOR = ChatColor.WHITE;
+    public static ChatColor SECONDARY_COLOR = ChatColor.WHITE;
+    public static ChatColor HIGHLIGHT_COLOR = ChatColor.WHITE;
 
     /**
      * Creates a new message manager.
