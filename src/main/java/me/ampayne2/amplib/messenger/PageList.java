@@ -89,4 +89,20 @@ public class PageList {
     private int clamp(int value, int min, int max) {
         return Math.max(min, Math.min(max, value));
     }
+
+    /**
+     * Gets the int page number from a string, 1 if not an int.
+     *
+     * @param pageNumber The string.
+     * @return The page number.
+     */
+    public static int getPageNumber(String pageNumber) {
+        int page;
+        try {
+            page = Integer.parseInt(pageNumber);
+        } catch (NumberFormatException e) {
+            page = 1;
+        }
+        return page;
+    }
 }
