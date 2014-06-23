@@ -2,7 +2,7 @@ package me.ampayne2.amplib.command.commands;
 
 import me.ampayne2.amplib.AmpJavaPlugin;
 import me.ampayne2.amplib.command.Command;
-import me.ampayne2.amplib.messenger.DefaultMessage;
+import me.ampayne2.amplib.messenger.PageList;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
@@ -26,12 +26,7 @@ public class HelpCommand extends Command {
     public void execute(String command, CommandSender sender, String[] args) {
         int pageNumber = 1;
         if (args.length == 1) {
-            try {
-                pageNumber = Integer.parseInt(args[0]);
-            } catch (NumberFormatException e) {
-                plugin.getMessenger().sendMessage(sender, DefaultMessage.ERROR_NUMBERFORMAT);
-                return;
-            }
+            pageNumber = PageList.getPageNumber(args[0]);
         }
         plugin.getCommandController().getPageList().sendPage(pageNumber, sender);
     }
