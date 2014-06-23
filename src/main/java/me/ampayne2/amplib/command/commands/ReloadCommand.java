@@ -16,9 +16,9 @@ public class ReloadCommand extends Command {
     public ReloadCommand(AmpJavaPlugin plugin) {
         super(plugin, "reload");
         this.plugin = plugin;
-        String pluginName = plugin.getName().toLowerCase();
+        String pluginName = plugin.getName();
         setDescription("Reloads the " + pluginName + " plugin");
-        setPermission(new Permission(pluginName + ".reload", PermissionDefault.OP));
+        setPermission(new Permission(pluginName.toLowerCase() + ".reload", PermissionDefault.OP));
         setPlayerOnly(false);
     }
 

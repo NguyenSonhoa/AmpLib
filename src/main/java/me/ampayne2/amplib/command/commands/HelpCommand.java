@@ -16,9 +16,9 @@ public class HelpCommand extends Command {
     public HelpCommand(AmpJavaPlugin plugin) {
         super(plugin, "help");
         this.plugin = plugin;
-        String pluginName = plugin.getName().toLowerCase();
+        String pluginName = plugin.getName();
         setDescription("Lists all " + pluginName + " commands");
-        setPermission(new Permission(pluginName + ".help", PermissionDefault.TRUE));
+        setPermission(new Permission(pluginName.toLowerCase() + ".help", PermissionDefault.TRUE));
         setPlayerOnly(false);
     }
 

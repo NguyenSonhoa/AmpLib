@@ -20,9 +20,9 @@ public class AboutCommand extends Command {
 
     public AboutCommand(AmpJavaPlugin plugin) {
         super(plugin, "");
-        String pluginName = plugin.getName().toLowerCase();
+        String pluginName = plugin.getName();
         setDescription("Lists some information about " + pluginName);
-        setPermission(new Permission(pluginName + ".about", PermissionDefault.TRUE));
+        setPermission(new Permission(pluginName.toLowerCase() + ".about", PermissionDefault.TRUE));
         setPlayerOnly(false);
         header = Messenger.HIGHLIGHT_COLOR + "<-------<| " + Messenger.PRIMARY_COLOR + "About " + pluginName + " " + Messenger.HIGHLIGHT_COLOR + "|>------->";
         info.add(Messenger.SECONDARY_COLOR + "Author: " + StringUtils.join(plugin.getDescription().getAuthors(), ", "));
