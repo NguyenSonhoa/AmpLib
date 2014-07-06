@@ -11,14 +11,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 /**
  * Provides access to AmpLib - Extend this instead of JavaPlugin.
  */
-public class AmpJavaPlugin extends JavaPlugin {
+public class AmpJavaPlugin extends JavaPlugin implements AmpPlugin {
     private ConfigManager configManager = null;
     private Messenger messenger = null;
     private CommandController commandController = null;
 
-    /**
-     * Initializes the config, message, and command managers.
-     */
+    @Override
     public void enableAmpLib() {
         configManager = new ConfigManager(this);
         messenger = new Messenger(this).registerRecipient(CommandSender.class, new RecipientHandler() {
@@ -35,9 +33,7 @@ public class AmpJavaPlugin extends JavaPlugin {
         commandController = new CommandController(this);
     }
 
-    /**
-     * Destroys the config, message, and command managers.
-     */
+    @Override
     public void disableAmpLib() {
         commandController.destroy();
         commandController = null;
@@ -47,56 +43,32 @@ public class AmpJavaPlugin extends JavaPlugin {
         configManager = null;
     }
 
-    /**
-     * Gets the {@link me.ampayne2.amplib.config.ConfigManager} instance.
-     *
-     * @return The {@link me.ampayne2.amplib.config.ConfigManager} instance.
-     */
+    @Override
     public ConfigManager getConfigManager() {
         return configManager;
     }
 
-    /**
-     * Sets the {@link me.ampayne2.amplib.config.ConfigManager} instance.
-     *
-     * @param configManager The {@link me.ampayne2.amplib.config.ConfigManager} instance.
-     */
+    @Override
     public void setConfigManager(ConfigManager configManager) {
         this.configManager = configManager;
     }
 
-    /**
-     * Gets the {@link me.ampayne2.amplib.messenger.Messenger} instance.
-     *
-     * @return The {@link me.ampayne2.amplib.messenger.Messenger} instance.
-     */
+    @Override
     public Messenger getMessenger() {
         return messenger;
     }
 
-    /**
-     * Sets the {@link me.ampayne2.amplib.messenger.Messenger} instance.
-     *
-     * @param messenger The {@link me.ampayne2.amplib.messenger.Messenger} instance.
-     */
+    @Override
     public void setMessenger(Messenger messenger) {
         this.messenger = messenger;
     }
 
-    /**
-     * Gets the {@link me.ampayne2.amplib.command.CommandController} instance.
-     *
-     * @return The {@link me.ampayne2.amplib.command.CommandController} instance.
-     */
+    @Override
     public CommandController getCommandController() {
         return commandController;
     }
 
-    /**
-     * Sets the {@link me.ampayne2.amplib.command.CommandController} instance.
-     *
-     * @param commandController The {@link me.ampayne2.amplib.command.CommandController} instance.
-     */
+    @Override
     public void setCommandController(CommandController commandController) {
         this.commandController = commandController;
     }
