@@ -1,6 +1,6 @@
-package me.ampayne2.amplib.messenger;
+package ninja.amp.amplib.messenger;
 
-import me.ampayne2.amplib.AmpJavaPlugin;
+import ninja.amp.amplib.AmpJavaPlugin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class PageList {
     /**
      * Creates a new PageList.
      *
-     * @param plugin          The {@link me.ampayne2.amplib.AmpJavaPlugin} instance.
+     * @param plugin          The {@link ninja.amp.amplib.AmpJavaPlugin} instance.
      * @param name            The name of the PageList.
      * @param strings         The list of strings in the PageList.
      * @param messagesPerPage The strings that should be displayed per page.
@@ -32,7 +32,7 @@ public class PageList {
     /**
      * Creates a new PageList.
      *
-     * @param plugin          The {@link me.ampayne2.amplib.AmpJavaPlugin} instance.
+     * @param plugin          The {@link ninja.amp.amplib.AmpJavaPlugin} instance.
      * @param name            The name of the PageList.
      * @param messagesPerPage The strings that should be displayed per page.
      */

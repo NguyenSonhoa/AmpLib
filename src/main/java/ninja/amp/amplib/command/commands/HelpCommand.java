@@ -1,8 +1,8 @@
-package me.ampayne2.amplib.command.commands;
+package ninja.amp.amplib.command.commands;
 
-import me.ampayne2.amplib.AmpJavaPlugin;
-import me.ampayne2.amplib.command.Command;
-import me.ampayne2.amplib.messenger.PageList;
+import ninja.amp.amplib.AmpJavaPlugin;
+import ninja.amp.amplib.command.Command;
+import ninja.amp.amplib.messenger.PageList;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;

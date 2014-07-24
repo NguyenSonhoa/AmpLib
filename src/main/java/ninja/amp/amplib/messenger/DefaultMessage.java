@@ -1,4 +1,4 @@
-package me.ampayne2.amplib.messenger;
+package ninja.amp.amplib.messenger;
 
 /**
  * Default messages included with AmpLib

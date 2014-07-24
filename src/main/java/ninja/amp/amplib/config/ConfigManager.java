@@ -1,6 +1,6 @@
-package me.ampayne2.amplib.config;
+package ninja.amp.amplib.config;
 
-import me.ampayne2.amplib.AmpJavaPlugin;
+import ninja.amp.amplib.AmpJavaPlugin;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.io.File;
@@ -18,7 +18,7 @@ public class ConfigManager {
     /**
      * Creates a new config manager.
      *
-     * @param plugin The {@link me.ampayne2.amplib.AmpJavaPlugin} instance.
+     * @param plugin The {@link ninja.amp.amplib.AmpJavaPlugin} instance.
      */
     public ConfigManager(AmpJavaPlugin plugin) {
         this.plugin = plugin;
@@ -28,7 +28,7 @@ public class ConfigManager {
     }
 
     /**
-     * Adds a {@link me.ampayne2.amplib.config.ConfigAccessor} for each {@link ConfigType}.
+     * Adds a {@link ninja.amp.amplib.config.ConfigAccessor} for each {@link ConfigType}.
      *
      * @param configTypes The {@link ConfigType}s to register.
      */
@@ -40,19 +40,19 @@ public class ConfigManager {
     }
 
     /**
-     * Adds a {@link me.ampayne2.amplib.config.ConfigAccessor} to the config manager.
+     * Adds a {@link ninja.amp.amplib.config.ConfigAccessor} to the config manager.
      *
-     * @param configAccessor The {@link me.ampayne2.amplib.config.ConfigAccessor}.
+     * @param configAccessor The {@link ninja.amp.amplib.config.ConfigAccessor}.
      */
     public void addConfigAccessor(ConfigAccessor configAccessor) {
         configs.put(configAccessor.getConfigType(), configAccessor);
     }
 
     /**
-     * Gets a certain {@link me.ampayne2.amplib.config.ConfigAccessor}.
+     * Gets a certain {@link ninja.amp.amplib.config.ConfigAccessor}.
      *
      * @param configType The {@link ConfigType} of the config.
-     * @return The {@link me.ampayne2.amplib.config.ConfigAccessor}.
+     * @return The {@link ninja.amp.amplib.config.ConfigAccessor}.
      */
     public ConfigAccessor getConfigAccessor(ConfigType configType) {
         return configs.get(configType);

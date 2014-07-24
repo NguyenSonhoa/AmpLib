@@ -1,7 +1,7 @@
-package me.ampayne2.amplib.messenger;
+package ninja.amp.amplib.messenger;
 
-import me.ampayne2.amplib.AmpJavaPlugin;
-import me.ampayne2.amplib.config.DefaultConfigType;
+import ninja.amp.amplib.AmpJavaPlugin;
+import ninja.amp.amplib.config.DefaultConfigType;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -27,9 +27,9 @@ public class Messenger {
     /**
      * Creates a new message manager.
      * <br>
-     * Must be created after the {@link me.ampayne2.amplib.config.ConfigManager}!
+     * Must be created after the {@link ninja.amp.amplib.config.ConfigManager}!
      *
-     * @param plugin The {@link me.ampayne2.amplib.AmpJavaPlugin} instance.
+     * @param plugin The {@link ninja.amp.amplib.AmpJavaPlugin} instance.
      */
     public Messenger(AmpJavaPlugin plugin) {
         this.plugin = plugin;
@@ -39,10 +39,10 @@ public class Messenger {
     }
 
     /**
-     * Adds the {@link me.ampayne2.amplib.messenger.Message} defaults to the message config and loads them.
+     * Adds the {@link ninja.amp.amplib.messenger.Message} defaults to the message config and loads them.
      *
-     * @param messageEnum The {@link me.ampayne2.amplib.messenger.Message}s to register.
-     * @return The {@link me.ampayne2.amplib.messenger.Messenger} instance.
+     * @param messageEnum The {@link ninja.amp.amplib.messenger.Message}s to register.
+     * @return The {@link ninja.amp.amplib.messenger.Messenger} instance.
      */
     public Messenger registerMessages(EnumSet<? extends Message> messageEnum) {
         FileConfiguration messageConfig = plugin.getConfigManager().getConfig(DefaultConfigType.MESSAGE);
@@ -70,10 +70,10 @@ public class Messenger {
     }
 
     /**
-     * Sends a {@link me.ampayne2.amplib.messenger.Message} to a recipient.
+     * Sends a {@link ninja.amp.amplib.messenger.Message} to a recipient.
      *
      * @param recipient The recipient of the message.
-     * @param message   The {@link me.ampayne2.amplib.messenger.Message}.
+     * @param message   The {@link ninja.amp.amplib.messenger.Message}.
      * @param replace   Strings to replace any occurences of %s in the message with.
      * @return True if the message was sent, else false.
      */

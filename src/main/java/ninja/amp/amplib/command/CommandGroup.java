@@ -1,7 +1,7 @@
-package me.ampayne2.amplib.command;
+package ninja.amp.amplib.command;
 
-import me.ampayne2.amplib.AmpJavaPlugin;
-import me.ampayne2.amplib.messenger.DefaultMessage;
+import ninja.amp.amplib.AmpJavaPlugin;
+import ninja.amp.amplib.messenger.DefaultMessage;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
@@ -26,7 +26,7 @@ public class CommandGroup {
     /**
      * Creates a new CommandGroup.
      *
-     * @param plugin The {@link me.ampayne2.amplib.AmpJavaPlugin} instance.
+     * @param plugin The {@link ninja.amp.amplib.AmpJavaPlugin} instance.
      * @param name   The name of the command.
      */
     public CommandGroup(AmpJavaPlugin plugin, String name) {

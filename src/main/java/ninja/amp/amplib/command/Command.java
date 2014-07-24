@@ -1,6 +1,6 @@
-package me.ampayne2.amplib.command;
+package ninja.amp.amplib.command;
 
-import me.ampayne2.amplib.AmpJavaPlugin;
+import ninja.amp.amplib.AmpJavaPlugin;
 import org.bukkit.command.CommandSender;
 
 /**
@@ -13,7 +13,7 @@ public abstract class Command extends CommandGroup {
     /**
      * Creates a new Command.
      *
-     * @param plugin The {@link me.ampayne2.amplib.AmpJavaPlugin} instance.
+     * @param plugin The {@link ninja.amp.amplib.AmpJavaPlugin} instance.
      * @param name   The name of the command.
      */
     public Command(AmpJavaPlugin plugin, String name) {

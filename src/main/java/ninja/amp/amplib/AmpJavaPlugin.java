@@ -1,9 +1,9 @@
-package me.ampayne2.amplib;
+package ninja.amp.amplib;
 
-import me.ampayne2.amplib.command.CommandController;
-import me.ampayne2.amplib.config.ConfigManager;
-import me.ampayne2.amplib.messenger.Messenger;
-import me.ampayne2.amplib.messenger.RecipientHandler;
+import ninja.amp.amplib.command.CommandController;
+import ninja.amp.amplib.config.ConfigManager;
+import ninja.amp.amplib.messenger.Messenger;
+import ninja.amp.amplib.messenger.RecipientHandler;
 import org.bukkit.Server;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;

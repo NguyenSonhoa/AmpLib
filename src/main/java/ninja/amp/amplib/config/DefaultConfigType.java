@@ -1,4 +1,4 @@
-package me.ampayne2.amplib.config;
+package ninja.amp.amplib.config;
 
 /**
  * Default custom config types included with AmpLib.

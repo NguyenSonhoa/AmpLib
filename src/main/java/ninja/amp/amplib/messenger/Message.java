@@ -1,4 +1,4 @@
-package me.ampayne2.amplib.messenger;
+package ninja.amp.amplib.messenger;
 
 /**
  * An interface for an enum of the messages in a plugin.

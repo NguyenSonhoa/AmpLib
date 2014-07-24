@@ -1,4 +1,4 @@
-package me.ampayne2.amplib.config;
+package ninja.amp.amplib.config;
 
 /**
  * An interface for an enum of the custom config types in a plugin.

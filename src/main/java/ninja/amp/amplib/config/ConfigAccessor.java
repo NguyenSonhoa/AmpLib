@@ -1,6 +1,6 @@
-package me.ampayne2.amplib.config;
+package ninja.amp.amplib.config;
 
-import me.ampayne2.amplib.AmpJavaPlugin;
+import ninja.amp.amplib.AmpJavaPlugin;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -21,7 +21,7 @@ public class ConfigAccessor {
     /**
      * Creates a new ConfigAccessor.
      *
-     * @param plugin     The {@link me.ampayne2.amplib.AmpJavaPlugin} instance.
+     * @param plugin     The {@link ninja.amp.amplib.AmpJavaPlugin} instance.
      * @param configType The {@link ConfigType} of the configuration file.
      * @param parent     The parent file.
      */

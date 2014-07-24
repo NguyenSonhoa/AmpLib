@@ -1,8 +1,8 @@
-package me.ampayne2.amplib.command;
+package ninja.amp.amplib.command;
 
-import me.ampayne2.amplib.AmpJavaPlugin;
-import me.ampayne2.amplib.messenger.Messenger;
-import me.ampayne2.amplib.messenger.PageList;
+import ninja.amp.amplib.AmpJavaPlugin;
+import ninja.amp.amplib.messenger.Messenger;
+import ninja.amp.amplib.messenger.PageList;
 
 import java.util.ArrayList;
 import java.util.List;

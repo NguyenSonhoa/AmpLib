@@ -1,8 +1,8 @@
-package me.ampayne2.amplib.command;
+package ninja.amp.amplib.command;
 
-import me.ampayne2.amplib.AmpJavaPlugin;
-import me.ampayne2.amplib.messenger.DefaultMessage;
-import me.ampayne2.amplib.messenger.PageList;
+import ninja.amp.amplib.AmpJavaPlugin;
+import ninja.amp.amplib.messenger.DefaultMessage;
+import ninja.amp.amplib.messenger.PageList;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 
@@ -22,7 +22,7 @@ public class CommandController implements TabExecutor {
     /**
      * Creates a new command controller.
      *
-     * @param plugin The {@link me.ampayne2.amplib.AmpJavaPlugin} instance.
+     * @param plugin The {@link ninja.amp.amplib.AmpJavaPlugin} instance.
      */
     public CommandController(AmpJavaPlugin plugin) {
         this.plugin = plugin;
