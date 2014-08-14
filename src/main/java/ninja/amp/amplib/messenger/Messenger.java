@@ -77,7 +77,7 @@ public class Messenger {
      * @param replace   Strings to replace any occurences of %s in the message with.
      * @return True if the message was sent, else false.
      */
-    public boolean sendMessage(Object recipient, Message message, String... replace) {
+    public boolean sendMessage(Object recipient, Message message, Object... replace) {
         return sendRawMessage(recipient, DefaultMessage.PREFIX + (replace == null ? message.getMessage() : String.format(message.getMessage(), (Object[]) replace)));
     }
 
@@ -88,11 +88,11 @@ public class Messenger {
      * @param message   The message.
      * @return True if the message was sent, else false.
      */
-    public boolean sendRawMessage(Object recipient, String message) {
+    public boolean sendRawMessage(Object recipient, Object message) {
         if (recipient != null && message != null) {
             for (Class<?> recipientClass : recipientHandlers.keySet()) {
                 if (recipientClass.isAssignableFrom(recipient.getClass())) {
-                    recipientHandlers.get(recipientClass).sendMessage(recipient, message);
+                    recipientHandlers.get(recipientClass).sendMessage(recipient, message.toString());
                     return true;
                 }
             }
@@ -106,9 +106,9 @@ public class Messenger {
      * @param level    the level to log the message at.
      * @param messages the message(s) to log.
      */
-    public void log(Level level, String... messages) {
-        for (String message : messages) {
-            log.log(level, message);
+    public void log(Level level, Object... messages) {
+        for (Object message : messages) {
+            log.log(level, message.toString());
         }
     }
 
@@ -126,11 +126,11 @@ public class Messenger {
     /**
      * Decides whether or not to print a debug message.
      *
-     * @param message the message to debug.
+     * @param message The message to debug.
      */
-    public void debug(String message) {
+    public void debug(Object message) {
         if (debug) {
-            log.log(Level.INFO, message);
+            log.log(Level.INFO, message.toString());
         }
     }
 
