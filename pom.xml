@@ -4,7 +4,7 @@
 
     <groupId>ninja.amp</groupId>
     <artifactId>amplib</artifactId>
-    <version>1.1</version>
+    <version>1.1-SNAPSHOT</version>
     <inceptionYear>2014</inceptionYear>
     <name>AmpLib</name>
     <description>Basic command, config, and messaging library used in all my Bukkit plugins</description>
@@ -16,15 +16,15 @@
 
     <repositories>
         <repository>
-            <id>bukkit-repo</id>
-            <url>http://repo.bukkit.org/content/groups/public/</url>
+            <id>spigot-repo</id>
+            <url>http://repo.md-5.net/content/groups/public/</url>
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
             <version>1.7.9-R0.3-SNAPSHOT</version>
             <type>jar</type>
             <scope>provided</scope>
