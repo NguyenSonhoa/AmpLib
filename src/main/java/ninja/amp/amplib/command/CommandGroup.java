@@ -1,3 +1,21 @@
+/*
+ * This file is part of AmpLib.
+ *
+ * Copyright (c) 2014-2017 <http://github.com/ampayne2/>
+ *
+ * AmpLib is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * AmpLib is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with AmpLib.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package ninja.amp.amplib.command;
 
 import ninja.amp.amplib.AmpJavaPlugin;
@@ -15,9 +33,10 @@ import java.util.Map;
  * A command that only contains child commands.
  */
 public class CommandGroup {
+
     private final AmpJavaPlugin plugin;
     private final String name;
-    private Permission permission = null;
+    private Permission permission;
     private int minArgsLength = 0;
     private int maxArgsLength = -1;
     private boolean playerOnly = true;
@@ -158,9 +177,7 @@ public class CommandGroup {
                 if (child instanceof Command) {
                     deepChildren.add(child);
                 }
-                for (CommandGroup deepChild : child.getChildren(true)) {
-                    deepChildren.add(deepChild);
-                }
+                deepChildren.addAll(child.getChildren(true));
             }
             return deepChildren;
         } else {
@@ -217,4 +234,5 @@ public class CommandGroup {
             }
         }
     }
+
 }
