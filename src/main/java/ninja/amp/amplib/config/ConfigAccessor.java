@@ -61,8 +61,13 @@ public class ConfigAccessor {
 
         InputStream defConfigStream = plugin.getResource(configType.getFileName());
         if (defConfigStream != null) {
-            YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
-            fileConfiguration.setDefaults(defConfig);
+            try {
+                YamlConfiguration defConfig = new YamlConfiguration();
+                defConfig.load(defConfigStream.toString());
+                fileConfiguration.setDefaults(defConfig);
+            } catch (IOException | org.bukkit.configuration.InvalidConfigurationException e) {
+                plugin.getLogger().log(Level.SEVERE, "Could not load default config from " + configType.getFileName(), e);
+            }
         }
         return this;
     }

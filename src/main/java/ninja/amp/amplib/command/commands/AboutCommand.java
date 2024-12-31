@@ -21,7 +21,7 @@ package ninja.amp.amplib.command.commands;
 import ninja.amp.amplib.AmpJavaPlugin;
 import ninja.amp.amplib.command.Command;
 import ninja.amp.amplib.messenger.Messenger;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
